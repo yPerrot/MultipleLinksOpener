@@ -1,0 +1,22 @@
+{
+	"name": "Multiple Links Opener",
+	"description": "Past all your links to open them in 1 click!",
+	"version": "1.0.0",
+	"manifest_version": 2,
+	"homepage_url": "https://github.com/yPerrot/multiLinksOpener",
+	"browser_action": {
+		"default_popup": "index.html",
+		"default_title": "Multiple Links Opener",
+		"default_icon": {
+			"48": "icon.svg",
+			"128": "icon.svg"
+		}
+	},
+	"icons": {
+		"48": "icon.svg",
+		"128": "icon.svg"
+	},
+	"permissions": [
+		"tabs"
+	]
+}
