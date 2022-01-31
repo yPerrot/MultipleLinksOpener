@@ -1,8 +1,21 @@
+const isChrome = navigator.userAgent.indexOf('Chrome') !== -1;
+
+window.onload = (event) => {
+    const doLoadAllPages = JSON.parse(localStorage.getItem('doLoadAllPages'));
+
+    if ( !isChrome && doLoadAllPages) {
+       document.querySelector("#switch__checkbox").checked = true;
+    }
+}
+
+document.querySelector('#switch__checkbox').onclick = function () {
+    localStorage.setItem('doLoadAllPages', document.querySelector("#switch__checkbox").checked)
+}
+
+
 document.querySelector('#open-btn').onclick = function () {
     const links = document.querySelector('#links').value;
     const doLoad = !document.querySelector("#switch__checkbox").checked;
-
-    const isChrome = navigator.userAgent.indexOf('Chrome') !== -1;
 
     links.split('\n').forEach(link => {
         if (link.length == 0 || link.startsWith('//') || link.startsWith('#')) return;
