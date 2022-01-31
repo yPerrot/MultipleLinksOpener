@@ -6,15 +6,14 @@
 	"homepage_url": "https://github.com/yPerrot/multiLinksOpener",
 	"browser_action": {
 		"default_popup": "index.html",
-		"default_title": "Multiple Links Opener",
-		"default_icon": {
-			"48": "icon.svg",
-			"128": "icon.svg"
-		}
+		"default_title": "Multiple Links Opener"
 	},
+	"icon": "icon.svg",
 	"icons": {
-		"48": "icon.svg",
-		"128": "icon.svg"
+		"16": "icons/icon16.png",
+		"32": "icons/icon32.png",
+		"64": "icons/icon64.png",
+		"128": "icons/icon128.png"
 	},
 	"permissions": [
 		"tabs"
