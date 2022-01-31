@@ -5,6 +5,28 @@
 	--input-focus-h: 245;
 	--input-focus-s: 100%;
 	--input-focus-l: 42%;
+
+	--main-font-color: rgb(53, 53, 53);
+	--bg-color: white;
+	
+	--input-bg-color: white;
+	--input-font-color: ;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--main-font-color: white;
+		--bg-color: #2b2a33;
+		
+		--input-bg-color: #42414d;
+		--input-ph-font-color: white;
+	}
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: initial;
+	color: var(--input-ph-font-color);
+	/* opacity: 1; Firefox */
 }
 
 body {
@@ -13,6 +35,8 @@ body {
 	flex-direction: column;
 
 	width: 550px;
+
+	background-color: var(--bg-color);
 }
 
 header {
@@ -40,11 +64,12 @@ header {
 
 .toggle>p {
 	margin-right: 0.5rem;
+	color: var(--main-font-color);
 }
 
 .indications {
 	font-size: 0.875rem;
-	color: rgb(53, 53, 53);
+	color: var(--main-font-color);
 	/* max-width: 50%; */
 	text-justify: inter-word;
 }
@@ -62,6 +87,9 @@ textarea {
 	resize: none;
 
 	transition: box-shadow .2s ease-in-out;
+
+	background-color: var(--input-bg-color);
+	color: var(--main-font-color);
 }
 
 textarea:focus {
