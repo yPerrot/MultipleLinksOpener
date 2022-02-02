@@ -1,21 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-	--input-border: #8b8a8b;
-	--input-focus-h: 245;
-	--input-focus-s: 100%;
-	--input-focus-l: 42%;
-
 	--main-font-color: rgb(53, 53, 53);
 	--bg-color: white;
 	
 	--input-bg-color: white;
 	--input-font-color: ;
+
+	--toogle-btn-color: white;
+	--toogle-cursor: pointer;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--main-font-color: white;
+		--main-font-color: #efefef;
 		--bg-color: #2b2a33;
 		
 		--input-bg-color: #42414d;
@@ -23,20 +21,19 @@
 	}
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
 	color: initial;
 	color: var(--input-ph-font-color);
-	/* opacity: 1; Firefox */
 }
 
 body {
-	font-family: 'Montserrat', sans-serif;
-	display: flex;
-	flex-direction: column;
-
 	width: 550px;
 
+	font-family: 'Montserrat', sans-serif;
 	background-color: var(--bg-color);
+
+	display: flex;
+	flex-direction: column;
 }
 
 header {
@@ -49,9 +46,11 @@ header {
 	font-weight: 800;
 
 	background: -webkit-linear-gradient(#EF4765, #FF9A5A);
+
+	background-clip: text;
 	-webkit-background-clip: text;
+
 	-webkit-text-fill-color: transparent;
-	/* color: linear-gradient(to bottom right, #EF4765, #FF9A5A);; */
 }
 
 .toggle {
@@ -62,94 +61,13 @@ header {
 	margin-left: auto;
 }
 
-.toggle>p {
+.toggle > p {
 	margin-right: 0.5rem;
 	color: var(--main-font-color);
 }
 
-.indications {
-	font-size: 0.875rem;
-	color: var(--main-font-color);
-	/* max-width: 50%; */
-	text-justify: inter-word;
-}
 
-textarea {
-	width: calc(100% - 15px);
-
-	font-family: 'Montserrat', sans-serif;
-
-	padding: 4px;
-	
-	border: 3px solid rgba(239, 71, 101, 0.5);
-	border-radius: 10px;
-
-	resize: none;
-
-	transition: box-shadow .2s ease-in-out;
-
-	background-color: var(--input-bg-color);
-	color: var(--main-font-color);
-}
-
-textarea:focus {
-	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-	outline: 3px solid transparent;
-}
-
-button {
-	width: 100px;
-	margin-left: auto;
-}
-
-/*  */
-
-/* #region */
-
-#open-btn {
-
-	cursor: pointer;
-
-	margin-top: 0.75rem;
-	margin-bottom: 0.25rem;
-
-	background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
-	border: 0;
-	border-radius: 12px;
-	color: #FFFFFF;
-	cursor: pointer;
-	display: inline-block;
-	font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	font-weight: 500;
-	line-height: 2.5;
-	outline: transparent;
-	padding: 0 1rem;
-	text-align: center;
-	transition: box-shadow .2s ease-in-out;
-
-	text-decoration: none;
-	
-	-webkit-user-select: none;
-	user-select: none;
-	
-	touch-action: manipulation;
-	white-space: nowrap;
-}
-
-#open-btn:hover {
-	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
-}
-
-/* #endregion */
-
-
-:root {
-	--toogle-btn-color: white;
-	--toogle-cursor: pointer;
-}
-
-/* #region */
+/* #region Toggle */
 .switch {
 	position: relative;
 	display: inline-block;
@@ -165,15 +83,8 @@ button {
 
 .slider {
 	position: absolute;
-	
-	/* cursor: pointer; */
-	/* cursor: not-allowed; HERE: */
 	cursor: var(--toogle-cursor);
-
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
+	inset: 0; /* top: 0; left: 0; right: 0; bottom: 0; */
 	background: #ccc;
 	-webkit-transition: .4s;
 	transition: .4s;
@@ -183,19 +94,11 @@ button {
 	opacity: 0;
 	position: absolute;
 	content: "";
-
-	/* cursor: pointer; */
-	/* cursor: not-allowed; HERE: */
 	cursor: var(--toogle-cursor);
-
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	/* background-color: #ccc; */
+	inset: 0;
 	background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
-	-webkit-transition: .4s;
 	transition: .4s;
+	-webkit-transition: .4s;
 }
 
 input:checked + .slider::after {
@@ -209,17 +112,13 @@ input:checked + .slider::after {
 	width: 26px;
 	left: 4px;
 	bottom: 4px;
-
-	/* background-color: white; */
-	/* background-color: #e8e8e8; HERE: */
 	background-color: var(--toogle-btn-color);
-
-	-webkit-transition: .4s;
 	transition: .4s;
+	-webkit-transition: .4s;
 	z-index: 1;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
 	-webkit-transform: translateX(26px);
 	-ms-transform: translateX(26px);
 	transform: translateX(26px);
@@ -236,3 +135,60 @@ input:checked+.slider:before {
 }
 
 /* #endregion */
+
+.indications {
+	font-size: 0.875rem;
+	color: var(--main-font-color);
+	text-justify: inter-word;
+}
+
+textarea {
+	width: calc(100% - 15px);
+	padding: 4px;
+	
+	border: 3px solid rgba(239, 71, 101, 0.5);
+	border-radius: 10px;
+	background-color: var(--input-bg-color);
+
+	color: var(--main-font-color);
+	font-family: 'Montserrat', sans-serif;
+
+	transition: box-shadow .2s ease-in-out;
+}
+
+textarea:focus {
+	box-shadow: 
+		0 0 .25rem rgba(0, 0, 0, 0.5), 
+		-.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), 
+		.125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+	outline: 3px solid transparent;
+}
+
+#open-btn {
+	width: 100px;
+	
+	margin-left: auto;
+	margin-top: 0.75rem;
+	margin-bottom: 0.25rem;
+	padding: 0 1rem;
+	
+	cursor: pointer;
+	
+	background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+
+	color: #FFFFFF;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 2.5;
+	font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	
+	border: 0;
+	border-radius: 12px;
+	
+	outline: transparent;
+	transition: box-shadow .2s ease-in-out;
+}
+
+#open-btn:hover {
+	box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}

@@ -6,12 +6,18 @@ window.onload = (event) => {
     if ( !isChrome && doLoadAllPages) {
        document.querySelector("#switch__checkbox").checked = true;
     }
+
+    if (isChrome) {
+        document.querySelector('#switch__checkbox').disabled = true;
+        
+        document.documentElement.style.setProperty('--toogle-cursor', 'not-allowed');
+        document.documentElement.style.setProperty('--toogle-btn-color', '#e8e8e8');
+    }
 }
 
 document.querySelector('#switch__checkbox').onclick = function () {
     localStorage.setItem('doLoadAllPages', document.querySelector("#switch__checkbox").checked)
 }
-
 
 document.querySelector('#open-btn').onclick = function () {
     const links = document.querySelector('#links').value;
@@ -37,15 +43,4 @@ document.querySelector('#open-btn').onclick = function () {
 
     document.querySelector('textarea').value = '';
     return false;
-}
-
-
-// FIXME: move it
-if (navigator.userAgent.indexOf('Chrome') != -1) {
-    document.querySelector('#switch__checkbox').disabled = true;
-    
-    let toggleStyle = document.querySelector('.switch').style;
-
-    toggleStyle.setProperty('--toogle-cursor', 'not-allowed');
-    toggleStyle.setProperty('--toogle-btn-color', '#e8e8e8');
 }
