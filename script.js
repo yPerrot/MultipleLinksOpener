@@ -1,4 +1,5 @@
 const isChrome = navigator.userAgent.indexOf('Chrome') !== -1;
+const regExpURL = /\b((?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s`!()[\]{};:'".,<>?«»“”‘’]))/gi
 
 window.onload = (event) => {
     const doLoadAllPages = JSON.parse(localStorage.getItem('doLoadAllPages'));
@@ -20,12 +21,11 @@ document.querySelector('#switch__checkbox').onclick = function () {
 }
 
 document.querySelector('#open-btn').onclick = function () {
-    const links = document.querySelector('#links').value;
+    const text = document.querySelector('#links').value;
     const doLoad = !document.querySelector("#switch__checkbox").checked;
 
-    links.split('\n').forEach(link => {
-        if (link.length == 0 || link.startsWith('//') || link.startsWith('#')) return;
-
+    text.match(regExpURL).forEach(link => {
+        console.log(link);
         if (isChrome) {
             chrome.tabs.create({
                 url: link,
