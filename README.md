@@ -1,21 +1,22 @@
-
 <h1 align="center">Welcome to "Multiple Links Opener" source code 👋</h1>
 
-This is a Browser Extention to open multiple URLs in a single click. 
+__Multiple Links Opener__ is a browser extension to open multiple URLs in a single click. 
 
 Get it for [Chrome]() or [Firefox]()
 
 ## Features 🛠 
 
-The extension allows you to open multiple URLs in separated tabs, at the same time.  
-Each line of text will be considered as a link and will be loaded in a new tab. Empty Lines and the one starting with # or // will not be skipped, to organise your list of links.  
-You can decide to load all the sites at once, or one by one when selecting the tabs.  
+This extension allows you to open multiple URLs in separated tabs, in a single click.  
+To do so, past all your links in the textarea, and click on 'Open' to open all the links.
+You can also past plain text and the extension will extract the links from it. This alow you to past your notes or some documents to open the multiple links without difficulties. 
+You also can decide to load all the sites at once, or one by one when selecting the tabs, thank to a dedicated button.
 
 ## TODOs 📋 
 
- - Add "Load all tabs" faeture in Chrome
+ - Add "Load all tabs" feature in Chrome
+ - Handle links without protocol, subdomain and paths (ex: google.com) 
  - ...
 
-## License 📃 
+## Licence 📃 
 
 [MIT](https://choosealicense.com/licenses/mit/)
