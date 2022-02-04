@@ -8,7 +8,7 @@ Get it for [Chrome]() or [Firefox]()
 
 This extension allows you to open multiple URLs in separated tabs, in a single click.  
 To do so, past all your links in the textarea, and click on 'Open' to open all the links.
-You can also past plain text and the extension will extract the links from it. This alow you to past your notes or some documents to open the multiple links without difficulties. 
+You can also past plain text and the extension will extract the links from it. This alow you to past your notes or some documents to open the multiple links without difficulties.  
 You also can decide to load all the sites at once, or one by one when selecting the tabs, thank to a dedicated button.
 
 ## TODOs 📋 
