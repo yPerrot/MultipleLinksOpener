@@ -13,7 +13,6 @@ You also can decide to load all the sites at once, or one by one when selecting 
 
 ## TODOs 📋 
 
- - Add "Load all tabs" feature in Chrome
  - Handle links without protocol, subdomain and paths (ex: google.com) 
  - ...
 

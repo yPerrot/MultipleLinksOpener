@@ -9,12 +9,12 @@ window.onload = (event) => {
        document.querySelector("#switch__checkbox").checked = true;
     }
 
-    if (isChrome) {
-        document.querySelector('#switch__checkbox').disabled = true;
+    // if (isChrome) {
+    //     document.querySelector('#switch__checkbox').disabled = true;
         
-        document.documentElement.style.setProperty('--toogle-cursor', 'not-allowed');
-        document.documentElement.style.setProperty('--toogle-btn-color', '#e8e8e8');
-    }
+    //     document.documentElement.style.setProperty('--toogle-cursor', 'not-allowed');
+    //     document.documentElement.style.setProperty('--toogle-btn-color', '#e8e8e8');
+    // }
 }
 
 document.querySelector('#switch__checkbox').onclick = function () {
@@ -25,12 +25,16 @@ document.querySelector('#open-btn').onclick = function () {
     const text = document.querySelector('#links').value;
     const doLoad = !document.querySelector("#switch__checkbox").checked;
 
-    text.match(regExpURL).forEach(link => {
+    text.match(regExpURL)?.forEach(async link => {
         console.log(link);
         if (isChrome) {
+            if (doLoad) {
+                link = 'data:text/html,<title>' + link
+            }
+
             chrome.tabs.create({
                 url: link,
-                active: false,
+                active: false
             });
         } else {
             browser.tabs.create({
