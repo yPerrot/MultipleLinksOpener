@@ -2,7 +2,7 @@
 
 __Multiple Links Opener__ is a browser extension to open multiple URLs in a single click. 
 
-Get it for [Chrome]() or [Firefox]()
+Get it for [Chrome]() or [Firefox](https://addons.mozilla.org/fr/firefox/addon/multiplelinksopener/)
 
 ## Features 🛠 
 
