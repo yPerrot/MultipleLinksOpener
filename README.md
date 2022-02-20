@@ -1,8 +1,10 @@
 <h1 align="center">Welcome to "Multiple Links Opener" source code 👋</h1>
 
-__Multiple Links Opener__ is a browser extension to open multiple URLs in a single click. 
+__Multiple Links Opener__ is a Firefox browser extension to open multiple URLs in a single click. You can download it by clicking [here](https://addons.mozilla.org/fr/firefox/addon/multiplelinksopener/)!
 
-Get it for [Chrome]() or [Firefox](https://addons.mozilla.org/fr/firefox/addon/multiplelinksopener/)
+<p align="center">
+  <img align="center" width="500" src="./DarkMode.png" alt="Extension visual">
+</p>
 
 ## Features 🛠 
 
@@ -13,7 +15,8 @@ You also can decide to load all the sites at once, or one by one when selecting 
 
 ## TODOs 📋 
 
- - Handle links without protocol, subdomain and paths (ex: google.com) 
+ - [ ] Handle links without protocol, subdomain and paths (ex: google.com) 
+ - [ ] Highlight link in textarea
  - ...
 
 ## Licence 📃 
