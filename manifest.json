@@ -1,7 +1,7 @@
 {
 	"name": "Multiple Links Opener",
 	"description": "Past all your links to open them in 1 click!",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"manifest_version": 2,
 	"homepage_url": "https://github.com/yPerrot/MultipleLinksOpener",
 	"browser_action": {
