@@ -19,7 +19,10 @@ document.querySelector('#open-btn').onclick = function () {
     const doLoad = !document.querySelector("#switch__checkbox").checked;
 
     text.match(regExpURL)?.forEach(async link => {
-        console.log(link);
+        if ( !link.startsWith('http')) {
+            link = 'http://' + link;
+        }
+        
         if (isChrome) {
             if (doLoad) {
                 link = 'data:text/html,<title>' + link

@@ -6,10 +6,6 @@ chrome.tabs.onActivated.addListener(({tabId, windowId}) => {
         if (tab.url.startsWith(splitText)) {
             const realTabUrl = tab.url.replace(splitText, '')
             
-            if ( !realTabUrl.startsWith('http')) {
-                realTabUrl = 'http://' + realTabUrl;
-            }
-
             chrome.tabs.update(tabId, {
                 url: realTabUrl, 
             });
